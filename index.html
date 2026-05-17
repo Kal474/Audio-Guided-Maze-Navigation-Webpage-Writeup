@@ -263,18 +263,29 @@
     GitHub. 
   </p>
   <p>
-    The project successfully demonstrates that spatial audio can serve as a primary 
-    navigation tool in VR. Users are able to orient themselves and find the exit 
-    using only sound. The addition of footstep audio, haptic feedback at the exit, 
-    and atmospheric lighting further contributed to the sense of presence and 
-    immersion within the experience.
+    These were some of the main components of the project. The first 
+    step was setting up the Meta Quest 3 headset and ensuring the 
+    controllers were properly configured and functioning within Unity. 
+    This required installing the XR Interaction Toolkit, adding the 
+    correct controller interaction profiles, and importing the Starter 
+    Assets prefab to get everything working properly.
   </p>
-  <p>
-    Building this project provided hands on experience with Unity, the XR Interaction 
-    Toolkit, 3D spatial audio configuration, and VR development for the Meta Quest 3. 
-    Moving forward this project lays the groundwork for more rigorous research into 
-    audio based navigation in XR with potential applications in accessibility, 
-    emergency evacuation systems, and cognitive research.
+    <p>
+    For the maze structure, 3D objects within Unity were used with 
+    colliders placed on the walls to prevent the user from walking 
+    through them. The main directional light was dimmed significantly 
+    to limit visibility and create a dark atmosphere. Although the 
+    environment was darker, further improvements to the visuals and 
+    overall quality of the environment are planned for future iterations.
+  </p>
+    <p>
+    Spatial audio was set up at the exit of the maze to guide users 
+    toward the exit using distance attenuation — the further away you 
+    are from the exit, the quieter the sound becomes. Lastly, a timer 
+    was added to the player's view to track how long it takes the user 
+    to complete the maze. When the player reaches the exit the timer 
+    stops and the controllers deliver a haptic pulse as a physical 
+    confirmation of completion.
   </p>
 
   <h2>Future Implementations</h2>
