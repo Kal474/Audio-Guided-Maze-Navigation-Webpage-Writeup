@@ -3,112 +3,309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VR Maze Project</title>
+  <title>Audio Guided Maze Navigation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f5f5f5;
+      background-color: #ffffff;
       color: #333;
     }
- 
-    h1 {
+
+    /* HERO */
+    .hero {
       text-align: center;
-      color: #222;
-    }
- 
-    h2 {
-      color: #444;
+      padding: 60px 20px 40px;
       border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 40px;
+      margin-bottom: 20px;
     }
- 
-    p {
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .hero .author {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero .tagline {
+      color: #444;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 15px auto 0;
       line-height: 1.7;
     }
- 
+
+    h2 {
+      color: #111;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
     a {
       color: #0066cc;
     }
- 
-    .author {
+
+    /* VIDEO */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      background: #f5f5f5;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* LINKS */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .link-card {
+      display: block;
+      padding: 1.2rem;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #222;
       text-align: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .link-card:hover {
+      background: #f5f5f5;
+      border-color: #111;
+    }
+
+    .link-card-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+    .link-card-title { font-weight: bold; font-size: 0.95rem; display: block; }
+
+    /* CHALLENGES */
+    .challenge-item {
+      display: flex;
+      gap: 1rem;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .challenge-num {
+      font-weight: bold;
+      color: #aaa;
+      min-width: 2rem;
+    }
+
+    /* FUTURE */
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .future-card {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background: #fafafa;
+    }
+
+    .future-card h3 {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .future-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* PICTURES */
+    .pictures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .pictures-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #ccc;
+    }
+
+    .pictures-grid p {
+      font-size: 0.85rem;
       color: #666;
+      text-align: center;
       margin-top: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 20px;
+      border-top: 2px solid #ccc;
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
+
+  <div class="hero">
+    <h1>Audio Guided Maze Navigation</h1>
+    <p class="author">Kalkidan Asgedom &nbsp;|&nbsp; CMSC498F &nbsp;|&nbsp; Spring 2026</p>
+    <p class="tagline">
+      A virtual reality experience that explores whether spatial audio alone 
+      can guide navigation in a low visibility environment.
+    </p>
+  </div>
+
  
-  <h1>Audio-Guided-Maze-Navigation</h1>
-  <p class="author">Kalkidan Asgedom &nbsp;|&nbsp; CMSC498F &nbsp;|&nbsp; Spring 2026</p>
- 
+  <h2>Demo</h2>
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/LGBL9C0kpWU" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
   <h2>Background</h2>
   <p>
-    Humans naturally use sound and spatial awareness in their day
-    to day lives. As one of our main 5 senses, sound is a way that 
-    we understand our environment, navigate through it, and help us 
-    protect ourselves. The main goal of XR systems, especially Virtual 
-    Realities technologies is realistic immersion. However, most XR 
-    systems are predominantly visual based and don’t explore or leverage 
-    the power of audio and the role it plays in our physical environment. 
-    <br><br>
-    There is limited research on audio being used as the primary means 
-    of navigation. This project aims to explore the power of audio in 
-    low visibility environments where visual cues are not prominent. 
-    This Audio Guided Maze Navigation explores whether spatial audio 
-    alone can support sufficient navigation in a virtual reality environment. 
- 
+    Humans naturally use sound and spatial awareness in their day to day lives. 
+    As one of our main five senses, sound is a way that we understand our 
+    environment, navigate through it, and protect ourselves. The main goal of 
+    XR systems, especially Virtual Reality technologies, is realistic immersion. 
+    However, most XR systems are predominantly vision based and don't explore 
+    or leverage the power of audio and the role it plays in our physical environment.
   </p>
+  <p>
+    There is limited research on audio being used as the primary means of 
+    navigation. This project aims to explore the power of audio in low visibility 
+    environments where visual cues are not prominent. Audio Guided Maze Navigation 
+    explores whether spatial audio alone can support sufficient navigation in a 
+    virtual reality environment.
+  </p>
+
  
   <h2>Project Links</h2>
-  <ul>
-    <li><a href="https://docs.google.com/presentation/d/1SYM3HjMtIDgqzFcEmbv5qcQQSk5x_wXetCL12LkIsF4/edit?slide=id.p#slide=id.p">Presentation</a></li>
-    <li><a href="https://github.com/Kal474/Audio-Guided-Maze-Navigation-Webpage-Writeup/blob/main/index.html">GitHub Repository</a></li>
-    <li><h2>Demo</h2>
-      <iframe 
-        width="100%" 
-        height="450" 
-        src="https://www.youtube.com/embed/LGBL9C0kpWU" 
-        frameborder="0"
-        allowfullscreen>
-      </iframe></li>
-  </ul>
- 
-  <h2>Challenges Encountered</h2>
-  <p>
-    Describe the challenges you faced while building the project. 
-    For example: setting up the Meta XR SDK, getting controllers to work, 
-    setting up spatial audio, etc.
-  </p>
- 
-  <h2>Future Implementations</h2>
-  <p>
-    Describe features you would add in the future. For example: 
-    multiple maze levels, multiplayer support, or dynamic maze generation.
-    add how this can the help people and contribute the future development
-  </p>
- 
-  <h2>Summary</h2>
-  <p>
-    Write your summary here. Wrap up the project — what did you build, 
-    what did you learn, and what would you do differently?
-  </p>
+  <div class="links-grid">
+    <a class="link-card" href="https://github.com/Kal474/Audio-Guided-Maze-Navigation-Webpage-Writeup/blob/main/index.html" target="_blank">
+      <span class="link-card-icon">💻</span>
+      <span class="link-card-title">GitHub Project Repository</span>
+    </a>
+    <a class="link-card" href="https://github.com/Kal474/Audio-Guided-Maze-Navigation-Webpage-Writeup/blob/main/index.html" target="_blank">
+      <span class="link-card-icon">💻</span>
+      <span class="link-card-title">GitHub Webpage Repository</span>
+    </a>
+    <a class="link-card" href="https://docs.google.com/presentation/d/1SYM3HjMtIDgqzFcEmbv5qcQQSk5x_wXetCL12LkIsF4/edit?slide=id.p#slide=id.p" target="_blank">
+      <span class="link-card-icon">🎞️</span>
+      <span class="link-card-title">Presentation</span>
+    </a>
+    <a class="link-card" href="https://www.youtube.com/watch?v=LGBL9C0kpWU" target="_blank">
+      <span class="link-card-icon">🎮</span>
+      <span class="link-card-title">Demo</span>
+    </a>
+  </div>
+
 
   <h2>Progress Pictures</h2>
-  <img src="images/Maze.png" width="100%" alt="Skeleton of Maze">
-  <img src="images/ProgresPic1.PNG" width="100%" alt="Refined Maze visuals and limited visability">
-  
+  <div class="pictures-grid">
+    <div>
+      <img src="images/Maze.png" alt="Skeleton of Maze">
+      <p>Early maze structure</p>
+    </div>
+    <div>
+      <img src="images/ProgresPic1.PNG" alt="Refined Maze visuals and limited visibility">
+      <p>Refined maze with limited visibility</p>
+    </div>
+  </div>
 
-
-  <h2>References</h2>
-  <p>
-    Write your summary here. Wrap up the project — what did you build, 
-    what did you learn, and what would you do differently?
-  </p>
  
+  <h2>Future Implementations</h2>
+  <div class="future-grid">
+    <div class="future-card">
+      <h3>Multiple Levels</h3>
+      <p>Expand into a multi level experience with increasing maze complexity and progressively quieter audio making navigation harder.</p>
+    </div>
+    <div class="future-card">
+      <h3>Darker Environment</h3>
+      <p>Further reduce visual cues to create a more controlled research environment for studying audio based navigation.</p>
+    </div>
+    <div class="future-card">
+      <h3>Data Collection</h3>
+      <p>Record completion times, paths taken, and hesitation points to support more rigorous research conclusions.</p>
+    </div>
+    <div class="future-card">
+      <h3>User Testing</h3>
+      <p>Conduct testing with a larger group including a control condition comparing audio only vs vision only navigation.</p>
+    </div>
+    <div class="future-card">
+      <h3>Room Scale VR</h3>
+      <p>Explore room scale support for smaller maze environments allowing users to physically walk through the space.</p>
+    </div>
+    <div class="future-card">
+      <h3>Real World Impact</h3>
+      <p>Apply findings to accessibility tools, emergency evacuation systems, and inclusive game design for visually impaired users.</p>
+    </div>
+  </div>
+
+
+  <h2>Summary</h2>
+  <p>
+    This project set out to answer a simple but underexplored question: can spatial 
+    audio alone support navigation in a virtual environment? Using Unity and a Meta 
+    Quest 3 headset, a VR maze was built where the user must find the exit by 
+    following a directional sound source in a dark environment with no visual 
+    navigation aids.
+  </p>
+  <p>
+    The project successfully demonstrates that spatial audio can serve as a primary 
+    navigation tool in VR. Users are able to orient themselves and find the exit 
+    using only sound. The addition of footstep audio, haptic feedback at the exit, 
+    and atmospheric lighting further contributed to the sense of presence and 
+    immersion within the experience.
+  </p>
+  <p>
+    Building this project provided hands on experience with Unity, the XR Interaction 
+    Toolkit, 3D spatial audio configuration, and VR development for the Meta Quest 3. 
+    Moving forward this project lays the groundwork for more rigorous research into 
+    audio based navigation in XR with potential applications in accessibility, 
+    emergency evacuation systems, and cognitive research.
+  </p>
+
+  <footer>
+    Kalkidan Asgedom &nbsp;|&nbsp; CMSC498F &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; University of Maryland
+  </footer>
+
 </body>
 </html>
